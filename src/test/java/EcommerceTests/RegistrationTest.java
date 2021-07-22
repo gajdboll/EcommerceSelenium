@@ -1,4 +1,4 @@
-package PhpTravelsTest;
+package EcommerceTests;
 
 import java.io.IOException;
 import java.util.Random;
@@ -21,33 +21,13 @@ import PageObjects.HomePage;
  
 
 public class RegistrationTest extends TestBase {
-/*
-	@Test//(enabled=false)
-	public void DataDrivenRegistrationTest() throws InterruptedException, IOException {
-		//Expected result
-		String expected = "Hi, Tensa Zangetsu";
-
-		HomePage hp = new HomePage( );
-		RegistrationPage rp= hp.SignUpProcess();
-		AfterLoginPage alp = rp.LoginProcess();
-		//alp.VerifyProcess();
-		//Actual result
-		Thread.sleep(2000);
-		String actual = alp.Verify().getText();
-		//Assertion text
-		Assert.assertEquals(actual, expected);
-		Log.info("RegistrationTest ran");
-
-
-	}
-		 */
-
-
+ 
 
 	// The same test with manually passing values
 
 	@Test
 	public void ManualPassingValuesRegistrationTest() throws InterruptedException, IOException {
+
 	
 		String ExpectedURL = "http://automationpractice.com/index.php?controller=my-account";
 		
@@ -77,39 +57,10 @@ public class RegistrationTest extends TestBase {
 	
 	@Test(dataProvider = "reg")
 	public void ExcelPassingValuesRegistrationTest(String email,   String first, String last, String pass, String address, String city, String state, String postcode, String country , String phone) throws InterruptedException, IOException {
-	
-		String ExpectedURL = "http://automationpractice.com/index.php?controller=my-account";
-		
-		HomePage homePage = new HomePage();
-		Thread.sleep(2000);
-		CreateAccountPage createAccount= homePage.SignUpProcess();
-		//createAccount.enterEmail("t0sjksdttt@asdE.we");
-		createAccount.enterEmail( email);
-		RegistrationPage registrationPage = createAccount.ClickSubmit().
-						enterFirstName( first).
-						enterSecName( last).
-						enterPassword( pass).
-						enterAddress( address).
-						enterCity( city).
-						enterState(state).
-						enterZip(postcode).
-						enterCountry(country).
-						enterContactNumber(phone);
-		AfterLoginPage afterRegistration = 	registrationPage.ClickSignUp().WaitForSignOutElement();
-		
-		
-		String actualResults = DriverManager.getWebDriver().getCurrentUrl();
-		// assertion - url
-		Assert.assertEquals(actualResults, ExpectedURL);
-		
-		Thread.sleep(2000);		
-	}
-	
-	@Test(dataProvider = "log")
-	
-	public void ExcelPassingValuesRegistrationTest2(String email,   String first, String last, String pass, String address, String city, String state, String postcode, String country , String phone) throws InterruptedException, IOException {
-	
-		String ExpectedURL = "Sign Out";
+	/*below exercise is presented with the chain method technioque - check the registrationPage to make sure that each method returns this (the same page) or new NextPageExample)
+	 * similar test can be run by creating number of small methods with no return type (void) but then we will not chain those methods - it is still good approach
+	 */
+		String ExpectedResults = "Sign Out";
 		
 		HomePage homePage = new HomePage();
 		Thread.sleep(2000);
@@ -131,57 +82,75 @@ public class RegistrationTest extends TestBase {
 		
 		String actualResults = afterRegistration.GetSignOut().getText();
 		// assertion - url
-		Assert.assertEquals(actualResults, ExpectedURL);
-		
-		Thread.sleep(2000);		
-	}
-	//Data Provider section
-	@DataProvider
-	public Object[][] reg() throws Exception
-	{
-		String rootDir = System.getProperty("user.dir");
-        Object[][] testObjArray = ExcelUtils.getTableArray(rootDir + "//TestData.xlsx","reg");
-
-        return (testObjArray);
-
-	}
-	@DataProvider
-	public Object[][] log() throws Exception
-	{
-		String rootDir = System.getProperty("user.dir");
-        Object[][] testObjArray = ExcelUtils.getTableArray(rootDir + "//TestData.xlsx","log");
-
-        return (testObjArray);
-
-	}
+		Assert.assertEquals(actualResults, ExpectedResults);
 	
-	/*Test 3 
+	}
+
+	//Data Provider section
+			@DataProvider
+			public Object[][] reg() throws Exception
+			{
+				String rootDir = System.getProperty("user.dir");
+		        Object[][] testObjArray = ExcelUtils.getTableArray(rootDir + Constants.EXCEL_DIRECTORY,Constants.EXCEL_FIRST_TAB);
+
+		        return (testObjArray);
+
+			}
+			
+	
+	/*Test 1 
 	 * 
 	 * Create Test for invalid email on registration page 
 	 * -> verify that correct error message occurs on the top of the page
 	 * 
 	 * 
 	 *********************************************
-	 * Test 4
+	 * Test 2
 	 * 
 	 * Create Test for blank email on registration page 
 	 * -> verify that correct error message occurs on the top of the page
 	 * 
 	 * ******************************************************************
 	 * 
-	 * Test 5
+	 * Test 3
 	 * 
-	 * Create Test for password doesnt match  confirmation password on registration page 
+	 * Create Test for invalid password (less than 5 char) 
 	 * -> verify that correct error message occurs on the top of the page
 	 * 
 	 * *-**************************************************
+	 * Test 4
+	 * 
+	  * Create Test for blank first name on registration page 
+	 * -> verify that correct error message occurs on the top of the page
+	 * Test 5
+	 * 	 * *-**************************************************
+	  * Create Test for blank second/ last name on registration page 
+	 * -> verify that correct error message occurs on the top of the page
+	 * 	 * *-**************************************************
 	 * Test 6
 	 * 
-	 * Create Test for less than 6 character password on registration page 
+	  * Create Test for blank address on registration page 
 	 * -> verify that correct error message occurs on the top of the page
+	 * 	 * *-**************************************************
+	 *  Test 7
 	 * 
+	  * Create Test for blank City on registration page 
+	 * -> verify that correct error message occurs on the top of the page
+	 * 	 * *-**************************************************
+	 *    Test 8
 	 * 
+	  * Create Test for blank zip code on registration page 
+	 * -> verify that correct error message occurs on the top of the page
+	 * 	 * *-**************************************************
+	 *    Test 9
 	 * 
+	 * Create Test for invalid zip code on registration page 
+	 * -> verify that correct error message occurs on the top of the page
+	 * 	 * *-**************************************************
+	 *     Test 10
+	 * 
+	 * Create Test for blank mobile code on registration page 
+	 * -> verify that correct error message occurs on the top of the page
 	 * 
 	 * */
 }

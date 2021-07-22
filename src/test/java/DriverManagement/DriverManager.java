@@ -19,7 +19,7 @@ public class DriverManager {
 	public static WebDriver getWebDriver() {
 		if (driver == null) {
 			//initiating driver using WebDriverManager
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			//below lines only used once you are using driver installed on your system
 			// Initiate chrome driver
 			driver = BrowserFactory.getBrowser(BROWSER_TYPE);

@@ -2,14 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
+    <listener class-name="utilities.PDFReport"/>
     <listener class-name="DriverManagement.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="FIREFOX"/>
     <classes>
       <class name="PhpTravelsTest.RegistrationTest">
         <methods>
           <include name="after"/>
+          <include name="ManualPassingValuesRegistrationTest"/>
           <include name="before"/>
+          <include name="ExcelPassingValuesRegistrationTest" invocation-numbers="0 1"/>
           <include name="ExcelPassingValuesRegistrationTest2" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- PhpTravelsTest.RegistrationTest -->

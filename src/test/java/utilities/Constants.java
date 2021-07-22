@@ -30,4 +30,8 @@ public class Constants
  	public static final String PHONE_NUMBER ="34500000";
 	
  	///////////////////////////////////////
+ 	public static final String EXCEL_DIRECTORY ="//TestData.xlsx";
+ 	public static final String EXCEL_FIRST_TAB="reg";
+	public static final String EXCEL_SEC_TAB="log";
+ 	
 }
