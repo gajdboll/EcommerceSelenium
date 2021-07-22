@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="PhpTravelsTest.RegistrationTest" hash-for-method="ExcelPassingValuesRegistrationTest2(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)">ExcelPassingValuesRegistrationTest2(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="PhpTravelsTest.RegistrationTest" hash-for-method="ExcelPassingValuesRegistrationTest2(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)">ExcelPassingValuesRegistrationTest2(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +121,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="PhpTravelsTest.RegistrationTest" hash-for-method="ManualPassingValuesRegistrationTest">ManualPassingValuesRegistrationTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="PhpTravelsTest.RegistrationTest" hash-for-method="ExcelPassingValuesRegistrationTest(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)">ExcelPassingValuesRegistrationTest(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="PhpTravelsTest.RegistrationTest" hash-for-method="ExcelPassingValuesRegistrationTest(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)">ExcelPassingValuesRegistrationTest(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -117,6 +141,69 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">PhpTravelsTest.RegistrationTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ExcelPassingValuesRegistrationTest2(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)">
+                  </a> <!-- ExcelPassingValuesRegistrationTest2(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000) -->
+                  <span class="method-name">ExcelPassingValuesRegistrationTest2</span>
+                  <span class="parameters">(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Sign Out] but found [Sign out]
+	at PhpTravelsTest.RegistrationTest.ExcelPassingValuesRegistrationTest2(RegistrationTest.java:134)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ExcelPassingValuesRegistrationTest2(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)">
+                  </a> <!-- ExcelPassingValuesRegistrationTest2(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021) -->
+                  <span class="method-name">ExcelPassingValuesRegistrationTest2</span>
+                  <span class="parameters">(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div/a[contains(text(),&apos;Sign out&apos;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at PageObjects.AfterLoginPage.WaitForSignOutElement(AfterLoginPage.java:36)
+	at PhpTravelsTest.RegistrationTest.ExcelPassingValuesRegistrationTest2(RegistrationTest.java:129)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/a[contains(text(),&apos;Sign out&apos;)]&quot;}
+  (Session info: chrome=91.0.4472.164)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LIE-CZ9NTC2&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.164, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\kgajdosz\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49690}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 292653f5ed0797f5234a79a215fa04c6
+*** Element info: {Using=xpath, value=//div/a[contains(text(),&apos;Sign out&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 27 more
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -125,9 +212,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ManualPassingValuesRegistrationTest">
-                  </a> <!-- ManualPassingValuesRegistrationTest -->
-                  <span class="method-name">ManualPassingValuesRegistrationTest</span>
+                  <a name="ExcelPassingValuesRegistrationTest(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)">
+                  </a> <!-- ExcelPassingValuesRegistrationTest(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021) -->
+                  <span class="method-name">ExcelPassingValuesRegistrationTest</span>
+                  <span class="parameters">(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ExcelPassingValuesRegistrationTest(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)">
+                  </a> <!-- ExcelPassingValuesRegistrationTest(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000) -->
+                  <span class="method-name">ExcelPassingValuesRegistrationTest</span>
+                  <span class="parameters">(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,16 +283,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ManualPassingValuesRegistrationTest')
+data.setCell(0, 1, 'ExcelPassingValuesRegistrationTest2')
 data.setCell(0, 2, 'PhpTravelsTest.RegistrationTest')
-data.setCell(0, 3, 13957);
+data.setCell(0, 3, 13959);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'ExcelPassingValuesRegistrationTest')
+data.setCell(1, 2, 'PhpTravelsTest.RegistrationTest')
+data.setCell(1, 3, 13866);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'ExcelPassingValuesRegistrationTest')
+data.setCell(2, 2, 'PhpTravelsTest.RegistrationTest')
+data.setCell(2, 3, 12597);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'ExcelPassingValuesRegistrationTest2')
+data.setCell(3, 2, 'PhpTravelsTest.RegistrationTest')
+data.setCell(3, 3, 11580);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -211,9 +319,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">PhpTravelsTest.RegistrationTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ManualPassingValuesRegistrationTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -228,12 +343,52 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ManualPassingValuesRegistrationTest</span>
-                <span class="method-start">8056 ms</span>
+                <span class="method-name">ExcelPassingValuesRegistrationTest(Test1@test1.te1, Adam, Atest, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</span>
+                <span class="method-start">8387 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">after</span>
-                <span class="method-start">22038 ms</span>
+                <span class="method-start">22269 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">before</span>
+                <span class="method-start">23464 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ExcelPassingValuesRegistrationTest(Tes2@test2.te2, Ola, Btest, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</span>
+                <span class="method-start">30503 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">43106 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">before</span>
+                <span class="method-start">44699 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ExcelPassingValuesRegistrationTest2(Lo1@test1.te1, Adam, LogA, 345345.0, no 5 wer, Dublin, Iowa, 00000, United States, 34500000)</span>
+                <span class="method-start">51635 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">63520 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">before</span>
+                <span class="method-start">64684 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ExcelPassingValuesRegistrationTest2(Log2@test2.te2, Ola, LogB, 345345.0, no 45 tretdfg, Sligo, Alaska, 00000, United States, 34500021)</span>
+                <span class="method-start">72607 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">86813 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

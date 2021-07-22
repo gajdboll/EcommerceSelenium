@@ -9,8 +9,8 @@
       <class name="PhpTravelsTest.RegistrationTest">
         <methods>
           <include name="after"/>
-          <include name="ManualPassingValuesRegistrationTest"/>
           <include name="before"/>
+          <include name="ExcelPassingValuesRegistrationTest2" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- PhpTravelsTest.RegistrationTest -->
     </classes>

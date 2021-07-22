@@ -173,7 +173,7 @@ public class RegistrationPage {
 	public RegistrationPage enterContactNumber(String _phone) {
 		Log.info("Start of the Enter Phone Number");
 		phone.sendKeys(_phone);
-		Log.info("Finish of the Enter Number");
+		Log.info("Finish of the Enter Number-> your phone  is: " + _phone);
 		return this;
 	}
 
