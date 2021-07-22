@@ -52,18 +52,24 @@ public class RegistrationTest extends TestBase {
 		HomePage homePage = new HomePage();
 		Thread.sleep(2000);
 		CreateAccountPage createAccount= homePage.SignUpProcess();
-		//createAccount.enterEmail("t0ssdttt@asdE.we");
+		//createAccount.enterEmail("t0sjksdttt@asdE.we");
 		createAccount.enterEmail(Constants.EMAIL_ADDRESS_GENERATED);
 		RegistrationPage registrationPage = createAccount.ClickSubmit();
 		registrationPage.enterFirstName(Constants.FIRST_NAME).
 						enterSecName(Constants.SEC_NAME).
 						enterPassword(Constants.PASSWORD).
+						enterAddress(Constants.ADDRESS).
 						enterCity(Constants.CITY).
-						//enterState(Constants.STATE).
+						enterState(Constants.STATE).
 						enterZip(Constants.POSTCODE).
-					//	enterCountry(Constants.COUNTRY).
-						enterContactNumber(Constants.PHONE_NUMBER).
-						ClickSignUp();
+						enterCountry(Constants.COUNTRY).
+						enterContactNumber(Constants.PHONE_NUMBER);
+		AfterLoginPage afterRegistration = 	registrationPage.ClickSignUp();
+		
+		String actualResults = DriverManager.getWebDriver().getCurrentUrl();
+		
+		Assert.assertEquals(actualResults, ExpectedURL);
+		
 		Thread.sleep(2000);
 		
 		// assertion - url

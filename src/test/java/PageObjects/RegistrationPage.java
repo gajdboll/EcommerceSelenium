@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DataDriven.DataDriven;
 import DriverManagement.DriverManager;
+import utilities.Log;
 
 public class RegistrationPage {
 
@@ -111,48 +112,68 @@ public class RegistrationPage {
        //Methods used to input data into each field on RegistrationPage
 
 	public RegistrationPage enterFirstName(String firstname)
-	{
-		 wait.until(ExpectedConditions.visibilityOf(first));
+	{	Log.info("Start of the Enter First Name");
+		wait.until(ExpectedConditions.visibilityOf(first));
 		first.sendKeys(firstname);
+		Log.info("Finish of the Enter First Name");
 		return this;
 	}
 	public RegistrationPage enterSecName(String secname)
 	{
+		Log.info("Start of the Enter Second Name");
 		last.sendKeys(secname);
+		Log.info("Finish of the Enter Second Name -> your sec name is: " + secname);
 		return this;
 	}
 	public RegistrationPage enterPassword(String _pass)
 	{
+		Log.info("Start of the Enter Password");
 		pass.sendKeys(_pass);
+		Log.info("Finish of the Enter Password");
 		return this;
 	}
 	
 	public RegistrationPage enterAddress(String _address) {
+		Log.info("Start of the Enter Address");
 		address.sendKeys(_address);
+		Log.info("Finish of the Enter Address");
 		return this;
 	}
 	public RegistrationPage enterCity(String _city) {
+		Log.info("Start of the Enter City");
 		city.sendKeys(_city);
+		Log.info("Finish of the Enter City");
 		return this;
 	}
+	 
 	public RegistrationPage enterState(String _state) {
+		Log.info("Start of the Enter State");
 		state.click();
 		Select select = new Select(state);
-		select.getOptions();
-		select.selectByValue(_state);
-		return this;//////////////////////////////////////////////////work on that
+		int sizeOfTheDropDownState= select.getOptions().size();	
+		Random r = new Random();
+		select.selectByIndex(r.nextInt(sizeOfTheDropDownState-1));
+		Log.info("Finish of the Enter State");
+		return this;/////////////////////////////////////////////////randomly select one value -> by index
 	}
 	public RegistrationPage enterZip(String _zip) {
+		Log.info("Start of the Enter ZipCode");
 		postcode.sendKeys(_zip);
+		Log.info("Finish of the Enter ZipCode");
 		return this; 
 	}
 	public RegistrationPage enterCountry(String _country) {
+		Log.info("Start of the Enter Country");
 		Select select = new Select(country);
-		select.selectByValue(_country);
-		return this;//////////////////////////////////////////////////work on that
+		int sizeOfTheDropDownCountry= select.getOptions().size();	 
+		select.selectByIndex( sizeOfTheDropDownCountry-1);
+		Log.info("Finish of the Enter Country");
+		return this;///////////////////////////////////////////////always select last value////
 	}
 	public RegistrationPage enterContactNumber(String _phone) {
+		Log.info("Start of the Enter Phone Number");
 		phone.sendKeys(_phone);
+		Log.info("Finish of the Enter Number");
 		return this;
 	}
 

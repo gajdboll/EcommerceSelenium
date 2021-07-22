@@ -1,1 +1,73 @@
 [INFO ] 2021-07-20 11:37:53.666 [main] Log - RegistrationTest ran
+[INFO ] 2021-07-22 08:55:44.567 [main] Log - Start of the Enter First Name
+[INFO ] 2021-07-22 08:55:45.080 [main] Log - Finish of the Enter First Name
+[INFO ] 2021-07-22 08:55:45.081 [main] Log - Start of the Enter Second Name
+[INFO ] 2021-07-22 08:55:45.476 [main] Log - Finish of the Enter Second Name
+[INFO ] 2021-07-22 08:55:45.476 [main] Log - Start of the Enter Password
+[INFO ] 2021-07-22 08:55:45.670 [main] Log - Finish of the Enter Password
+[INFO ] 2021-07-22 08:55:45.671 [main] Log - Start of the Enter Address
+[INFO ] 2021-07-22 08:55:45.920 [main] Log - Finish of the Enter Address
+[INFO ] 2021-07-22 08:55:45.921 [main] Log - Start of the Enter City
+[INFO ] 2021-07-22 08:55:46.121 [main] Log - Finish of the Enter City
+[INFO ] 2021-07-22 08:55:46.122 [main] Log - Start of the Enter State
+[INFO ] 2021-07-22 08:55:47.249 [main] Log - Finish of the Enter State
+[INFO ] 2021-07-22 08:55:47.250 [main] Log - Start of the Enter ZipCode
+[INFO ] 2021-07-22 08:55:47.415 [main] Log - Finish of the Enter ZipCode
+[INFO ] 2021-07-22 08:55:47.416 [main] Log - Start of the Enter Country
+[INFO ] 2021-07-22 08:55:47.677 [main] Log - Finish of the Enter Country
+[INFO ] 2021-07-22 08:55:47.677 [main] Log - Start of the Enter Phone Number
+[INFO ] 2021-07-22 08:55:47.871 [main] Log - Finish of the Enter Number
+[INFO ] 2021-07-22 09:04:43.922 [main] Log - Start of the Enter First Name
+[INFO ] 2021-07-22 09:04:47.815 [main] Log - Finish of the Enter First Name
+[INFO ] 2021-07-22 09:04:47.816 [main] Log - Start of the Enter Second Name
+[INFO ] 2021-07-22 09:04:48.016 [main] Log - Finish of the Enter Second Name
+[INFO ] 2021-07-22 09:04:48.016 [main] Log - Start of the Enter Password
+[INFO ] 2021-07-22 09:04:48.218 [main] Log - Finish of the Enter Password
+[INFO ] 2021-07-22 09:04:48.219 [main] Log - Start of the Enter Address
+[INFO ] 2021-07-22 09:04:48.435 [main] Log - Finish of the Enter Address
+[INFO ] 2021-07-22 09:04:48.435 [main] Log - Start of the Enter City
+[INFO ] 2021-07-22 09:04:48.654 [main] Log - Finish of the Enter City
+[INFO ] 2021-07-22 09:04:48.655 [main] Log - Start of the Enter State
+[INFO ] 2021-07-22 09:04:49.748 [main] Log - Finish of the Enter State
+[INFO ] 2021-07-22 09:04:49.748 [main] Log - Start of the Enter ZipCode
+[INFO ] 2021-07-22 09:04:49.923 [main] Log - Finish of the Enter ZipCode
+[INFO ] 2021-07-22 09:04:49.923 [main] Log - Start of the Enter Country
+[INFO ] 2021-07-22 09:04:50.170 [main] Log - Finish of the Enter Country
+[INFO ] 2021-07-22 09:04:50.171 [main] Log - Start of the Enter Phone Number
+[INFO ] 2021-07-22 09:04:50.340 [main] Log - Finish of the Enter Number
+[INFO ] 2021-07-22 09:08:30.285 [main] Log - Start of the Enter First Name
+[INFO ] 2021-07-22 09:08:34.137 [main] Log - Finish of the Enter First Name
+[INFO ] 2021-07-22 09:08:34.137 [main] Log - Start of the Enter Second Name
+[INFO ] 2021-07-22 09:08:34.483 [main] Log - Finish of the Enter Second Name
+[INFO ] 2021-07-22 09:08:34.483 [main] Log - Start of the Enter Password
+[INFO ] 2021-07-22 09:08:34.665 [main] Log - Finish of the Enter Password
+[INFO ] 2021-07-22 09:08:34.666 [main] Log - Start of the Enter Address
+[INFO ] 2021-07-22 09:08:34.901 [main] Log - Finish of the Enter Address
+[INFO ] 2021-07-22 09:08:34.902 [main] Log - Start of the Enter City
+[INFO ] 2021-07-22 09:08:35.069 [main] Log - Finish of the Enter City
+[INFO ] 2021-07-22 09:08:35.069 [main] Log - Start of the Enter State
+[INFO ] 2021-07-22 09:08:36.413 [main] Log - Finish of the Enter State
+[INFO ] 2021-07-22 09:08:36.414 [main] Log - Start of the Enter ZipCode
+[INFO ] 2021-07-22 09:08:36.634 [main] Log - Finish of the Enter ZipCode
+[INFO ] 2021-07-22 09:08:36.635 [main] Log - Start of the Enter Country
+[INFO ] 2021-07-22 09:08:36.957 [main] Log - Finish of the Enter Country
+[INFO ] 2021-07-22 09:08:36.957 [main] Log - Start of the Enter Phone Number
+[INFO ] 2021-07-22 09:08:37.168 [main] Log - Finish of the Enter Number
+[INFO ] 2021-07-22 09:10:45.128 [main] Log - Start of the Enter First Name
+[INFO ] 2021-07-22 09:10:45.541 [main] Log - Finish of the Enter First Name
+[INFO ] 2021-07-22 09:10:45.542 [main] Log - Start of the Enter Second Name
+[INFO ] 2021-07-22 09:10:45.753 [main] Log - Finish of the Enter Second Name -> your sec name is: LauraWpwambMrzmTW
+[INFO ] 2021-07-22 09:10:45.754 [main] Log - Start of the Enter Password
+[INFO ] 2021-07-22 09:10:45.967 [main] Log - Finish of the Enter Password
+[INFO ] 2021-07-22 09:10:45.968 [main] Log - Start of the Enter Address
+[INFO ] 2021-07-22 09:10:46.194 [main] Log - Finish of the Enter Address
+[INFO ] 2021-07-22 09:10:46.194 [main] Log - Start of the Enter City
+[INFO ] 2021-07-22 09:10:46.355 [main] Log - Finish of the Enter City
+[INFO ] 2021-07-22 09:10:46.355 [main] Log - Start of the Enter State
+[INFO ] 2021-07-22 09:10:47.334 [main] Log - Finish of the Enter State
+[INFO ] 2021-07-22 09:10:47.334 [main] Log - Start of the Enter ZipCode
+[INFO ] 2021-07-22 09:10:47.518 [main] Log - Finish of the Enter ZipCode
+[INFO ] 2021-07-22 09:10:47.518 [main] Log - Start of the Enter Country
+[INFO ] 2021-07-22 09:10:47.765 [main] Log - Finish of the Enter Country
+[INFO ] 2021-07-22 09:10:47.765 [main] Log - Start of the Enter Phone Number
+[INFO ] 2021-07-22 09:10:47.937 [main] Log - Finish of the Enter Number
