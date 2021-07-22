@@ -55,7 +55,10 @@ public class RegistrationTest extends TestBase {
 		Thread.sleep(2000);		
 	}
 	
-	@Test(dataProvider = "reg")
+	/*		@Test(dataProvider = "reg")  -> that approach is only used when the @DataProvider / connection with certain excel is in the same class
+	 * we will provide different solution too when Data provider is in the different class so it could be passed to that test
+	 */
+	@Test(dataProvider = "reg") 
 	public void ExcelPassingValuesRegistrationTest(String email,   String first, String last, String pass, String address, String city, String state, String postcode, String country , String phone) throws InterruptedException, IOException {
 	/*below exercise is presented with the chain method technioque - check the registrationPage to make sure that each method returns this (the same page) or new NextPageExample)
 	 * similar test can be run by creating number of small methods with no return type (void) but then we will not chain those methods - it is still good approach
