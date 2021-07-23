@@ -7,153 +7,158 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import DriverManagement.DriverManager;
 import DriverManagement.TestBase;
 import PageObjects.RegistrationPage;
 import utilities.Log;
+import utilities.dataProviders.dataProviders;
 import utilities.Constants;
 import utilities.ExcelUtils;
 import PageObjects.AfterLoginPage;
 import PageObjects.CreateAccountPage;
 import PageObjects.HomePage;
- 
 
 public class RegistrationTest extends TestBase {
- 
 
 	// The same test with manually passing values
 
+	 /*below exercise is presented with the chain method technioque -
+	  check the registrationPage to make sure that each method returns this (the same page) or new NextPageExample) similar test can be run by creating number
+	  of small methods with no return type (void) but then we will not chain those methods - it is still good approach*/
+  
+	  @Test 
+	  public void ManualPassingValuesRegistrationTest() throws InterruptedException, IOException {
+	  
+	  
+	  String ExpectedURL ="http://automationpractice.com/index.php?controller=my-account";
+	  
+	  HomePage homePage = new HomePage(); 
+	  Thread.sleep(2000); 
+	  CreateAccountPage createAccount= homePage.SignUpProcess();
+	  //createAccount.enterEmail("t0sjksdttt@asdE.we");
+	  createAccount.enterEmail(Constants.EMAIL_ADDRESS_GENERATED); 
+	  RegistrationPage registrationPage = createAccount.ClickSubmit();
+	  registrationPage.enterFirstName(Constants.FIRST_NAME).
+	  					enterSecName(Constants.SEC_NAME). 
+	  					enterPassword(Constants.PASSWORD).
+	  					enterAddress(Constants.ADDRESS). 
+	  					enterCity(Constants.CITY).
+	  					enterState(Constants.STATE).
+	  					enterZip(Constants.POSTCODE).
+	  					enterCountry(Constants.COUNTRY). 
+	  					enterContactNumber(Constants.PHONE_NUMBER);
+	  AfterLoginPage afterRegistration = registrationPage.ClickSignUp();
+	  
+	  String actualResults = DriverManager.getWebDriver().getCurrentUrl(); 
+	  //assertion - url 
+	  Assert.assertEquals(actualResults, ExpectedURL);
+	  
+	  Thread.sleep(2000); }
+	/*  
+	//  @Test(dataProvider = "reg") -> that approach is only used when the @DataProvider / connection with certain excel is in the same class we
+	  //will provide different solution too when Data provider is in the different class so it could be passed to that test
+	  
+	  @Test(dataProviderClass = dataProviders.class , dataProvider = "reg") 
+	  public void ExcelPassingValuesRegistrationTest(String email, String first, String last, String pass, String address, String city, String state, String postcode, String country , String phone) throws InterruptedException,
+	  IOException {
+		 
+	  String ExpectedResults = "Sign Out";
+	  
+	  HomePage homePage = new HomePage(); Thread.sleep(2000); CreateAccountPage
+	  createAccount= homePage.SignUpProcess();
+	  //createAccount.enterEmail("t0sjksdttt@asdE.we"); 
+	  createAccount.enterEmail( email);
+	  RegistrationPage registrationPage = createAccount.ClickSubmit().
+			  					enterFirstName( first).
+			  					enterSecName( last). 
+			  					enterPassword( pass).
+			  					enterAddress( address). 
+			  					enterCity( city). 
+			  					enterState(state).
+			  					enterZip(postcode). 
+			  					enterCountry(country). 
+			  					enterContactNumber(phone);
+	  AfterLoginPage afterRegistration = registrationPage.ClickSignUp().
+			  					WaitForSignOutElement();
+	  
+	  
+	  String actualResults = afterRegistration.GetSignOut().getText(); 
+	  // assertion - url 
+	  Assert.assertEquals(actualResults, ExpectedResults);
+	  
+	  }
+*/	
+// example how to pass value implemented in the xml into the method as a parameter
 	@Test
-	public void ManualPassingValuesRegistrationTest() throws InterruptedException, IOException {
-
-	
-		String ExpectedURL = "http://automationpractice.com/index.php?controller=my-account";
-		
-		HomePage homePage = new HomePage();
-		Thread.sleep(2000);
-		CreateAccountPage createAccount= homePage.SignUpProcess();
-		//createAccount.enterEmail("t0sjksdttt@asdE.we");
-		createAccount.enterEmail(Constants.EMAIL_ADDRESS_GENERATED);
-		RegistrationPage registrationPage = createAccount.ClickSubmit();
-		registrationPage.enterFirstName(Constants.FIRST_NAME).
-						enterSecName(Constants.SEC_NAME).
-						enterPassword(Constants.PASSWORD).
-						enterAddress(Constants.ADDRESS).
-						enterCity(Constants.CITY).
-						enterState(Constants.STATE).
-						enterZip(Constants.POSTCODE).
-						enterCountry(Constants.COUNTRY).
-						enterContactNumber(Constants.PHONE_NUMBER);
-		AfterLoginPage afterRegistration = 	registrationPage.ClickSignUp();
-		
-		String actualResults = DriverManager.getWebDriver().getCurrentUrl();
-		// assertion - url
-		Assert.assertEquals(actualResults, ExpectedURL);
-		
-		Thread.sleep(2000);		
-	}
-	
-	/*		@Test(dataProvider = "reg")  -> that approach is only used when the @DataProvider / connection with certain excel is in the same class
-	 * we will provide different solution too when Data provider is in the different class so it could be passed to that test
-	 */
-	@Test(dataProvider = "reg") 
-	public void ExcelPassingValuesRegistrationTest(String email,   String first, String last, String pass, String address, String city, String state, String postcode, String country , String phone) throws InterruptedException, IOException {
-	/*below exercise is presented with the chain method technioque - check the registrationPage to make sure that each method returns this (the same page) or new NextPageExample)
-	 * similar test can be run by creating number of small methods with no return type (void) but then we will not chain those methods - it is still good approach
-	 */
-		String ExpectedResults = "Sign Out";
-		
-		HomePage homePage = new HomePage();
-		Thread.sleep(2000);
-		CreateAccountPage createAccount= homePage.SignUpProcess();
-		//createAccount.enterEmail("t0sjksdttt@asdE.we");
-		createAccount.enterEmail( email);
-		RegistrationPage registrationPage = createAccount.ClickSubmit().
-						enterFirstName( first).
-						enterSecName( last).
-						enterPassword( pass).
-						enterAddress( address).
-						enterCity( city).
-						enterState(state).
-						enterZip(postcode).
-						enterCountry(country).
-						enterContactNumber(phone);
-		AfterLoginPage afterRegistration = 	registrationPage.ClickSignUp().WaitForSignOutElement();
-		
-		
-		String actualResults = afterRegistration.GetSignOut().getText();
-		// assertion - url
-		Assert.assertEquals(actualResults, ExpectedResults);
+	@Parameters("browser")
+	public void ParametysationTest(@Optional String browser) {
+		System.out.println("Test runs here" + browser);
 	
 	}
 
-	//Data Provider section
-			@DataProvider
-			public Object[][] reg() throws Exception
-			{
-				String rootDir = System.getProperty("user.dir");
-		        Object[][] testObjArray = ExcelUtils.getTableArray(rootDir + Constants.EXCEL_DIRECTORY,Constants.EXCEL_FIRST_TAB);
-
-		        return (testObjArray);
-
-			}
-			
-	
-	/*Test 1 
+	/*
+	 * //Data Provider section within the same test - > change was made and that code is in the separate class and then it is called above in the test
 	 * 
-	 * Create Test for invalid email on registration page 
-	 * -> verify that correct error message occurs on the top of the page
+	 * @DataProvider public Object[][] reg() throws Exception { 
+	 * String rootDir = System.getProperty("user.dir"); 
+	 * Object[][] testObjArray = ExcelUtils.getTableArray(rootDir + Constants.EXCEL_DIRECTORY,Constants.EXCEL_FIRST_TAB);
+	 * 
+	 * return (testObjArray);
+	 * 
+	 * }
+	 */
+
+	/*
+	 * Test 1
+	 * 
+	 * Create Test for invalid email on registration page -> verify that correct
+	 * error message occurs on the top of the page
 	 * 
 	 * 
 	 *********************************************
 	 * Test 2
 	 * 
-	 * Create Test for blank email on registration page 
-	 * -> verify that correct error message occurs on the top of the page
+	 * Create Test for blank email on registration page -> verify that correct error
+	 * message occurs on the top of the page
 	 * 
 	 * ******************************************************************
 	 * 
 	 * Test 3
 	 * 
-	 * Create Test for invalid password (less than 5 char) 
-	 * -> verify that correct error message occurs on the top of the page
+	 * Create Test for invalid password (less than 5 char) -> verify that correct
+	 * error message occurs on the top of the page
 	 * 
-	 * *-**************************************************
-	 * Test 4
+	 * *-************************************************** Test 4
 	 * 
-	  * Create Test for blank first name on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * Test 5
-	 * 	 * *-**************************************************
-	  * Create Test for blank second/ last name on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * 	 * *-**************************************************
-	 * Test 6
+	 * Create Test for blank first name on registration page -> verify that correct
+	 * error message occurs on the top of the page Test 5 *
+	 * *-************************************************** Create Test for blank
+	 * second/ last name on registration page -> verify that correct error message
+	 * occurs on the top of the page *
+	 * *-************************************************** Test 6
 	 * 
-	  * Create Test for blank address on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * 	 * *-**************************************************
-	 *  Test 7
+	 * Create Test for blank address on registration page -> verify that correct
+	 * error message occurs on the top of the page *
+	 * *-************************************************** Test 7
 	 * 
-	  * Create Test for blank City on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * 	 * *-**************************************************
-	 *    Test 8
+	 * Create Test for blank City on registration page -> verify that correct error
+	 * message occurs on the top of the page *
+	 * *-************************************************** Test 8
 	 * 
-	  * Create Test for blank zip code on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * 	 * *-**************************************************
-	 *    Test 9
+	 * Create Test for blank zip code on registration page -> verify that correct
+	 * error message occurs on the top of the page *
+	 * *-************************************************** Test 9
 	 * 
-	 * Create Test for invalid zip code on registration page 
-	 * -> verify that correct error message occurs on the top of the page
-	 * 	 * *-**************************************************
-	 *     Test 10
+	 * Create Test for invalid zip code on registration page -> verify that correct
+	 * error message occurs on the top of the page *
+	 * *-************************************************** Test 10
 	 * 
-	 * Create Test for blank mobile code on registration page 
-	 * -> verify that correct error message occurs on the top of the page
+	 * Create Test for blank mobile code on registration page -> verify that correct
+	 * error message occurs on the top of the page
 	 * 
-	 * */
+	 */
 }

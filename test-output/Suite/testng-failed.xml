@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
   <listeners>
     <listener class-name="utilities.PDFReport"/>
     <listener class-name="DriverManagement.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="2" name="Test(failed)" parallel="tests">
     <parameter name="browser" value="FIREFOX"/>
     <classes>
-      <class name="PhpTravelsTest.RegistrationTest">
+      <class name="EcommerceTests.RegistrationTest">
         <methods>
           <include name="after"/>
-          <include name="ManualPassingValuesRegistrationTest"/>
+          <include name="setWebDriver"/>
+          <include name="ParametysationTest"/>
           <include name="before"/>
-          <include name="ExcelPassingValuesRegistrationTest" invocation-numbers="0 1"/>
-          <include name="ExcelPassingValuesRegistrationTest2" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- PhpTravelsTest.RegistrationTest -->
+      </class> <!-- EcommerceTests.RegistrationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
